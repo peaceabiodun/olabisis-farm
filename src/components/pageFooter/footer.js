@@ -3,44 +3,46 @@ import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 
 
 const Footer = () => {
+
     return ( 
         <div >
-            <div className='grid grid-cols-3'>
-                <div>
-                    <h2>Contact Us</h2>
-                    <div>
-                        <p>Email</p>
-                        <p>abiodunpeace8@gmail.com</p>
+            <div className='grid grid-cols-3 text-[#274C5B] pt-5 pb-10'>
+
+                <div className='flex flex-col text-right px-8 space-y-4'>
+                    <h2 className='text-lg'>Contact Us</h2>
+                    <div className='text-sm'>
+                        <p >Email</p>
+                        <p className='font-[300]'>abiodunpeace8@gmail.com</p>
                     </div>
-                    <div>
+                    <div className='text-sm'>
                         <p>Phone</p>
-                        <p>+2348188567422</p>
+                        <p className='font-[300]'>+2348188567422</p>
                     </div>
-                    <div>
+                    <div className='text-sm'>
                         <p>Address</p>
-                        <p>88 road, borklyn street, USA</p>
+                        <p className='font-[300]'>88 road, borklyn street, USA</p>
                     </div>
                 </div>
 
-                <div className='border-x'>
-                    <Logo />
-                    <p>Get the best farm produce in your neighbourhood</p>
-                    <div className='flex'>
-                        <div>
-                            <BsInstagram />
+                <div className='border-x flex flex-col items-center space-y-4'>
+                    <Logo className='w-[170px]' />
+                    <p className='font-[300] text-sm'>Get the best farm produce in your neighbourhood</p>
+                    <div className='flex gap-2'>
+                        <div className='bg-[#EFF6F1] p-3 rounded-full cursor-pointer'>
+                            <BsInstagram size={16} />
                         </div>
-                        <div>
-                            <BsFacebook />
+                        <div className='bg-[#EFF6F1] p-3 rounded-full cursor-pointer'>
+                            <BsFacebook  size={16}/>
                         </div>
-                        <div>
-                            <BsTwitter />
+                        <div className='bg-[#EFF6F1] p-3 rounded-full cursor-pointer'>
+                            <BsTwitter  size={16} />
                         </div>
                     </div>
                 </div>
 
-                <div>
-                    <h2>Utility Pages</h2>
-                    <div>
+                <div className='text-left px-8 space-y-4'>
+                    <h2 className='text-lg'>Utility Pages</h2>
+                    <div className='text-sm font-[300] space-y-3'>
                         <p>Licences</p>
                         <p>Farms</p>
                         <p>Logistics</p>
