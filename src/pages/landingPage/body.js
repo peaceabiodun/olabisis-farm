@@ -5,7 +5,7 @@ const Body = () => {
     return (
        <div>    
             <div>
-                <img src={Image1} alt="farm pictures" className='relative' />
+                <img src={Image1} alt="farm pictures" className='relative ' />
                 <div className='absolute'>
                     <p>100% Natural farm produce</p>
                 </div>
@@ -16,10 +16,10 @@ const Body = () => {
                     <h2 className='text-2xl text-white'>Subscribe to our news letter</h2>
                     <div className='flex gap-2 text-sm'>
                         <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        className='w-[300px] h-[40px] rounded-lg text-[#ABABAB] outline-none px-2'
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            className='w-[300px] h-[40px] rounded-lg text-[#ABABAB] outline-none px-2'
                         />
                         <button className=' bg-[#274C5B] h-[40px] w-[200px] rounded-lg text-white'>Subscribe</button>
                     </div>
