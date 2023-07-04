@@ -4,10 +4,14 @@ import Image1 from "assets/images/img1.jpg";
 const Body = () => {
     return (
        <div>    
-            <div>
-                <img src={Image1} alt="farm pictures" className='relative ' />
-                <div className='absolute'>
-                    <p>100% Natural farm produce</p>
+            <div className='relative flex '>
+                <img src={Image1} alt="farm pictures"  />
+                <div className='absolute z-40'>
+                    <p className='text-[#68A47F] italic'>100% Natural farm produce</p>
+                    <h2 className='text-4xl text-[#274C5B] font-bold'>Choose the best healthier way of life</h2>
+                    <button className='text-[#274C5B] bg-[#EFD372  ]'>
+                        Explore Now
+                    </button>
                 </div>
             </div>    
             <div className='bg-white w-full flex items-center justify-center relative'>
