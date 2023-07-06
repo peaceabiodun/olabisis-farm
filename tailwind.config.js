@@ -18,6 +18,10 @@ module.exports = {
       colors : {
         current: '#274C5B',
       },
+      fontFamily: {
+        'Roboto': ['Roboto', 'sans-serif'],
+        'Yellowtail': ["Yellowtail"]
+      }
     },
   },
   plugins: [],
