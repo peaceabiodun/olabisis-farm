@@ -13,7 +13,7 @@ const NavbarHeader = () => {
 
             <div className=' text-[#274C5B] text-lg font-bold flex gap-6'>
                 {navLinks.map((item)=>(
-                    <NavLink to={item.link} id={item.id} className=''>
+                    <NavLink key={item.id} to={item.link} id={item.id} className=''>
                         {item.title}
                     </NavLink>
                 ))}

@@ -4,6 +4,8 @@ import Image3 from "assets/images/img3.jpg";
 import Image4 from "assets/images/img4.jpg";
 import Image6 from "assets/images/img6.jpg";
 import { BsFillArrowRightCircleFill} from "react-icons/bs";
+import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
+import { productCard } from "utils/data";
 
 
 
@@ -40,7 +42,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className='bg-[#Ffffff] flex justify-centerp-10 gap-4 w-full'>
+            <div className='bg-[#Ffffff] flex justify-center p-10 gap-4 w-full'>
                 <div className='w-full flex justify-end'>
                     <img src={Image6} alt="fishes" className='' />
                 </div>
@@ -52,8 +54,8 @@ const Body = () => {
                     <p className='bg-[#ECECEC] p-2 text-xs my-3 rounded-xl w-[40%] text-center'>100% Natural Product Sales</p>
                     <p className='text-xs pl-4 font-[300] w-[70%]'>We grow and sell diffrent kinds of fresh vegetables, crops, fish feeds and delivery to all states in Nigeria.</p>
 
-                    <p className='bg-[#ECECEC] p-2 text-xs my-3 rounded-xl w-[40%] text-center'>livestock / Poultry</p>
-                    <p className='text-xs pl-4 font-[300] w-[70%]'>We breed and sell and deliver diffrent species of livestock and Poultry birds such as Goats, Cattles, sheeps buffalos, chickens and turkeys . </p>
+                    <p className='bg-[#ECECEC] p-2 text-xs my-3 rounded-xl w-[40%] text-center'>Cat fish / livestock / Poultry</p>
+                    <p className='text-xs pl-4 font-[300] w-[70%]'>We breed and sell and deliver diffrent species and sizes of Cat fish, livestock and Poultry birds such as Goats, Cattles, sheeps buffalos, chickens and turkeys . </p>
 
                     <p className='bg-[#ECECEC] p-2 text-xs my-3 rounded-xl w-[40%] text-center'>Constructions</p>
                     <p className='text-xs pl-4 font-[300] w-[70%]'>We help individuals, small businesses and big companies construct well structured fish ponds, livestock cages an structures. </p>
@@ -62,6 +64,32 @@ const Body = () => {
                         Shop Now
                     </button>
                 </div>
+            </div>
+
+            <div className=' flex flex-col items-center justify-center p-10'>
+                <h3 className='text-[#7EB693] font-Yellowtail text-lg'>Categories</h3>
+                <h2 className='text-current font-semibold text-xl'>Our Products</h2>
+
+               
+                <div className=' grid grid-cols-4 gap-3 my-5'>
+                {productCard.map((item) =>(
+                    <div key={item.id} className='bg-[#F9F8F8] rounded-[12px] p-3'>
+                        <button className='bg-current py-1 px-2 text-[10px] text-white rounded-md'>{item.category}</button>
+                        <div className='p-3'>
+                            <img src={item.image} alt="items" className='rounded-lg' />
+                        </div>
+                        <p className='text-xs text-current mb-2'>{item.name}</p>
+                        <div className='flex justify-between border-t pt-2'>
+                            <p className='text-xs text-current'>{item.amount}</p>
+                            <div>
+                                <StarIcon />
+                            </div>
+                        </div>
+                    </div>
+                     ))}
+                </div>
+               
+
             </div>
 
             <div className='bg-white w-full flex items-center justify-center relative'>
