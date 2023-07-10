@@ -6,6 +6,10 @@ import Goat from "assets/images/goat.jpg";
 import Cattle from "assets/images/cattle.jpg";
 import Spinach from "assets/images/spinach.jpg";
 import FishFeed  from "assets/images/fishFeed.jpg";
+import Man1  from "assets/images/man1.jpg";
+import Man2  from "assets/images/man2.jpg";
+import Woman1  from "assets/images/woman1.jpg";
+
 
 
 export const navLinks = [
@@ -28,3 +32,15 @@ export const productCard =[
     {id:7 , category: 'vegetables', image: Spinach, name: "spinach", amount: "500/bag"}, 
     {id:8 , category: 'Feed', image: FishFeed , name: "Fish Feed", amount: "16,000/bag"}, 
 ];
+
+export const testimonialDetails = [
+    {id: 1, pic:Man1, comments: "I bought 5 chickens from Olabisi's last week, the biggest chicken i have bought in awhile for real. i highly recommend them. ", name: "Ola Adebayo"},  
+    {id: 2, pic:Woman1, comments: "I always buy my fresh vegetables from them, they deliver swiftly", name: "RIta Ajayi"},
+    {id: 3, pic:Man2, comments: "I bought two Cows from Olabisi's farm for my Dad's burial, they deliverd it to my village without stress.", name: "Wole Okiki"},  
+];
+
+export const stats = [
+    {id:1, stat: '100%', text: "Organic"},
+    {id:2, stat: '50', text: "Active Product"},
+    {id:3, stat: '10', text: "Years of Farming"},
+]

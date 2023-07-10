@@ -21,7 +21,11 @@ module.exports = {
       fontFamily: {
         'Roboto': ['Roboto', 'sans-serif'],
         'Yellowtail': ["Yellowtail"]
-      }
+      },
+      backgroundImage: {
+        'testimonialBg': "url('assets/images/img7.jpg')",
+        'landingBg': "url('assets/images/img1.jpg')",
+      },
     },
   },
   plugins: [],

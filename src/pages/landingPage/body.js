@@ -1,11 +1,14 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from 'react-responsive-carousel';
 import NewsLetterImg from "assets/images/newsLetterImg.jpg";
 import Image1 from "assets/images/img1.jpg";
 import Image3 from "assets/images/img3.jpg";
 import Image4 from "assets/images/img4.jpg";
 import Image6 from "assets/images/img6.jpg";
+import Image7 from "assets/images/img7.jpg";
 import { BsFillArrowRightCircleFill} from "react-icons/bs";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
-import { productCard } from "utils/data";
+import { productCard, stats, testimonialDetails } from "utils/data";
 
 
 
@@ -76,19 +79,53 @@ const Body = () => {
                     <div key={item.id} className='bg-[#F9F8F8] rounded-[12px] p-3'>
                         <button className='bg-current py-1 px-2 text-[10px] text-white rounded-md'>{item.category}</button>
                         <div className='p-3'>
-                            <img src={item.image} alt="items" className='rounded-lg' />
+                            <img src={item.image} alt="items" className='rounded-lg shadow-lg w-[200px] h-[160px]' />
                         </div>
                         <p className='text-xs text-current mb-2'>{item.name}</p>
                         <div className='flex justify-between border-t pt-2'>
                             <p className='text-xs text-current'>{item.amount}</p>
-                            <div>
-                                <StarIcon />
+                            <div className='pl-2'>
+                                <StarIcon className='w-[55px]' />
                             </div>
                         </div>
                     </div>
                      ))}
                 </div>
                
+                <button className=' bg-current text-xs p-3 text-white rounded-lg flex items-center my-3'>
+                    Load More 
+                    < BsFillArrowRightCircleFill className='ml-2' />
+                </button>
+            </div>
+
+            <div className='relative flex flex-col items-center justify-center'>
+                <img src={Image7} alt="" className="w-full h-[95vh]" />
+                <div className=" absolute z-30 flex flex-col justify-center items-center max-w-[700px] p-6">
+                    <h3 className='text-[#7EB693] font-Yellowtail text-lg'>Testimonial</h3>
+                    <h2 className='text-current font-semibold text-xl my-1'>What Are Our Customer Saying ?</h2>
+
+                    <Carousel showArrows={false} className="">
+                        {testimonialDetails.map((item) =>(
+                            <div key={item.id} className='flex flex-col justify-center items-center my-3 '>
+                                <div  className='w-[100px] h-[100px]'>
+                                    <img src={item.pic} alt="people" className='w-[100px] h-[100px] rounded-full' />
+                                </div>   
+                                <StarIcon className='my-3' />
+                                <p className='text-[#525C60] font-[300]'>{item.comments}</p>
+                                <h3 className="text-current mt-2">{item.name}</h3>
+                                <p className="text-xs font-[300] text-current">Customer</p>
+                            </div>
+                        ))}
+                    </Carousel> 
+
+                    <div className="flex gap-4 ">
+                    {stats.map((item) =>(
+                    <div key={item.id} className="bg-[#F1F1F1] border-[3px] border-[#7EB693] w-[120px] h-[120px] rounded-full text-current flex flex-col items-center justify-center">
+                        <h2 className="text-2xl font-semibold">{item.stat}</h2>
+                        <p className="text-xs">{item.text}</p>
+                    </div> ))} 
+                    </div>
+                </div>
 
             </div>
 
