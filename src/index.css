@@ -12,6 +12,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+//carousel styles
 .carousel .control-dots .dot{
   background: #C4C4C4 !important;
 }

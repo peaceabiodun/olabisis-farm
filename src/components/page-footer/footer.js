@@ -20,7 +20,7 @@ const Footer = () => {
                     </div>
                     <div className='text-sm'>
                         <p>Address</p>
-                        <p className='font-[300]'>88 road, borklyn street, USA</p>
+                        <p className='font-[300]'>88 road, Ralph street, Ilorin, Kwara state.</p>
                     </div>
                 </div>
 

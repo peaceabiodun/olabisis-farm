@@ -6,6 +6,7 @@ import Image3 from "assets/images/img3.jpg";
 import Image4 from "assets/images/img4.jpg";
 import Image6 from "assets/images/img6.jpg";
 import Image7 from "assets/images/img7.jpg";
+import Farm from "assets/images/farm.jpg";
 import { BsFillArrowRightCircleFill} from "react-icons/bs";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
 import { productCard, stats, testimonialDetails } from "utils/data";
@@ -16,7 +17,7 @@ const Body = () => {
     return (
        <div className=''>    
             <div className='relative flex items-center '>
-                <img src={Image1} alt="farm pictures" className='h-[85vh] w-full' />
+                <img src={Image1} alt="farm pictures" className='h-[90vh] w-full' />
                 <div className='absolute z-40 flex flex-col items-start max-w-[450px] pl-[100px]'>
                     <p className='text-[#c4ffda] italic'>Choose the best healthier way of life</p>
                     <h2 className='text-4xl text-[#ffffff] font-bold'>Welcome to the world of Nature and Clean Breeds</h2>
@@ -26,24 +27,6 @@ const Body = () => {
                     </button>
                 </div>
             </div> 
-
-            <div className='p-10 flex justify-center gap-4 '>
-
-                <div className='relative flex items-center'>
-                    <img src={Image3} alt="fruits" className='w-[300px] h-[200px] rounded-lg' />
-                    <div className='absolute flex flex-col items-start px-6 max-w-[200px]'>
-                        <h3 className='text-[#7EB693] font-Yellowtail'>Offer</h3>
-                        <p className='text-current my-1'>Get 10% off on fresh Vegetables and fruits</p>
-                    </div>
-                </div>
-                <div className='relative flex items-center'>
-                    <img src={Image4} alt="chickens" className='w-[300px] h-[200px] rounded-lg' />
-                    <div className=' absolute flex flex-col items-start px-6 max-w-[200px] text-white'>
-                        <h3 className='font-Yellowtail'>Offer</h3>
-                        <p className='my-1'>Get 20% off on live chickens and turkeys</p>
-                    </div>
-                </div>
-            </div>
 
             <div className='bg-[#Ffffff] flex justify-center p-10 gap-4 w-full'>
                 <div className='w-full flex justify-end'>
@@ -68,6 +51,17 @@ const Body = () => {
                     </button>
                 </div>
             </div>
+
+            <div className="relative flex flex-col items-end justify-center">
+                <img src={Farm} alt="farm pictures" className="h-[100vh] w-full " />
+
+                <div className='absolute flex flex-col max-w-[800px] pr-[100px]'>
+                    <h2 className='text-[#c4ffda] text-xl font-semibold'>Feeding Africa</h2>
+                    <p className="text-[#f8efef] ">We grow commercial organic fresh vegetables for supply across the country. Some of our regular produce include, but not limited to, bell peppers, tomatoes, watermelons, cabbages, broccoli, cucumbers all in different varieties. Olabisi's farm also supports the livestock industry. We understand that the performance of livestock depends on the quality of forage and pasture it is fed. Therefore we produce and supply highly nutritional pasture crops to livestock farmers.</p>
+                </div>
+            </div>
+
+          
 
             <div className=' flex flex-col items-center justify-center p-10'>
                 <h3 className='text-[#7EB693] font-Yellowtail text-lg'>Categories</h3>
@@ -98,6 +92,25 @@ const Body = () => {
                 </button>
             </div>
 
+            
+            <div className='p-10 flex justify-center gap-4 bg-current'>
+
+                <div className='relative flex items-center'>
+                    <img src={Image3} alt="fruits" className='w-[300px] h-[200px] rounded-lg' />
+                    <div className='absolute flex flex-col items-start px-6 max-w-[200px]'>
+                        <h3 className='text-[#7EB693] font-Yellowtail'>Offer</h3>
+                        <p className='text-current my-1'>Get 10% off on fresh Vegetables and fruits</p>
+                    </div>
+                </div>
+                <div className='relative flex items-center'>
+                    <img src={Image4} alt="chickens" className='w-[300px] h-[200px] rounded-lg' />
+                    <div className=' absolute flex flex-col items-start px-6 max-w-[200px] text-white'>
+                        <h3 className='font-Yellowtail'>Offer</h3>
+                        <p className='my-1'>Get 20% off on live chickens and turkeys</p>
+                    </div>
+                </div>
+            </div>
+
             <div className='relative flex flex-col items-center justify-center'>
                 <img src={Image7} alt="" className="w-full h-[95vh]" />
                 <div className=" absolute z-30 flex flex-col justify-center items-center max-w-[700px] p-6">
@@ -118,7 +131,7 @@ const Body = () => {
                         ))}
                     </Carousel> 
 
-                    <div className="flex gap-4 ">
+                    <div className="flex gap-4 border-t py-3">
                     {stats.map((item) =>(
                     <div key={item.id} className="bg-[#F1F1F1] border-[3px] border-[#7EB693] w-[120px] h-[120px] rounded-full text-current flex flex-col items-center justify-center">
                         <h2 className="text-2xl font-semibold">{item.stat}</h2>

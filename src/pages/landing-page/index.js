@@ -1,5 +1,5 @@
-import Footer from "components/pageFooter/footer";
-import NavbarHeader from "../../components/navbarHeader/navbarHeader";
+import Footer from "components/page-footer/footer";
+import NavbarHeader from "../../components/navbar-header/navbarHeader";
 import Body from "./body";
 
 

@@ -3,7 +3,7 @@ import {
   Routes, 
   Route, 
 } from "react-router-dom";
-import LandingPage from "pages/landingPage";
+import LandingPage from "pages/landing-page";
 
 
 
