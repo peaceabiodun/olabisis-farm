@@ -20,3 +20,7 @@ body {
 .carousel.carousel-slider {
   padding-bottom: 30px;
 }
+
+.carousel .carousel-status {
+right: 6px !important;
+}
