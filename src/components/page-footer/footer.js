@@ -26,7 +26,7 @@ const Footer = () => {
 
                 <div className='border-l sm:border-r flex flex-col sm:items-center space-y-4 px-5'>
                     <Logo className='w-[125px] md:w-[170px] h-6' />
-                    <p className='font-[300] text-xs sm:text-sm'>Get the best farm produce in your neighbourhood</p>
+                    <p className='font-[300] text-[10px] sm:text-sm'>Get the best farm produce in your neighbourhood</p>
                     <div className='flex gap-2'>
                         <div className='bg-[#EFF6F1] py-[6px] px-2 xs:py-3 xs:px-3 flex items-center rounded-full cursor-pointer'>
                             <BsInstagram size={16} />
@@ -41,8 +41,8 @@ const Footer = () => {
                 </div>
 
                 <div className='hidden sm:flex flex-col text-left px-8 space-y-4'>
-                    <h2 className='text-lg'>Utility Pages</h2>
-                    <div className='text-sm font-[300] space-y-3'>
+                    <h2 className='text-sm md:text-lg'>Utility Pages</h2>
+                    <div className='ext-[10px] sm:text-sm font-[300] space-y-3'>
                         <p>Licences</p>
                         <p>Farms</p>
                         <p>Logistics</p>
