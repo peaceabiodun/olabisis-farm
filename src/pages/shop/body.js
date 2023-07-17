@@ -1,6 +1,7 @@
 import Image8 from "assets/images/img8.jpg";
 import { productCard } from "utils/data";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
+import { Link } from "react-router-dom";
 
 
 
@@ -18,7 +19,10 @@ const Body = () => {
             <div className="flex justify-center">
             <div className=" grid grid-cols-2 xs:grid-cols-3 mdLg:grid-cols-4 p-5 md:p-10 gap-4">
                 {productCard.map((item) =>(
-                    <div key={item.id} className='bg-[#F9F8F8] rounded-[12px] p-2 md:p-3 '>
+                    <Link 
+                        key={item.id} 
+                        to={`/single-product/${item.id}`}
+                        className='bg-[#F9F8F8] rounded-[12px] p-2 md:p-3 '>
                         <button className='bg-current py-1 px-2 text-[9px] xs:text-[10px] text-white rounded-md'>{item.category}</button>
                         <div className='p-1 sm:p-3'>
                             <img src={item.image} alt="items" className='rounded-lg shadow-lg w-[150px] sm:w-[200px] h-[100px] sm:h-[160px]' />
@@ -30,7 +34,7 @@ const Body = () => {
                                 <StarIcon className='w-[40px] xs:w-[55px]' />
                             </div>
                         </div>
-                    </div>
+                    </Link>
                     ))}
             </div>
             </div>

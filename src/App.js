@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import LandingPage from "pages/landing-page";
 import Shop from "pages/shop";
-import SingleProductPage from "pages/single-product-page/product-page";
+import SingleProductPage from "pages/single-product-page";
 
 
 
