@@ -9,6 +9,11 @@ import FishFeed  from "assets/images/fishFeed.jpg";
 import Man1  from "assets/images/man1.jpg";
 import Man2  from "assets/images/man2.jpg";
 import Woman1  from "assets/images/woman1.jpg";
+import Eggs  from "assets/images/egg.jpg";
+import Tomato  from "assets/images/tomato.jpg";
+import Banana  from "assets/images/banana.jpg";
+import Broccoli  from "assets/images/Broccoli.jpg";
+import Corn  from "assets/images/corn.jpg";
 
 
 
@@ -28,7 +33,12 @@ export const productCard =[
     {id:5 , category: 'Livestock', image: Goat, name: "Goats", amount: "70,000/goat"}, 
     {id:6 , category: 'Livestock', image: Cattle, name: "Cattles", amount: "260,000/catl"},
     {id:7 , category: 'vegetables', image: Spinach, name: "spinach", amount: "500/bag"}, 
-    {id:8 , category: 'Feed', image: FishFeed , name: "Fish Feed", amount: "16,000/bag"}, 
+    {id:8 , category: 'Diary', image: Eggs , name: "Eggs", amount: "2,000/crt"},
+    {id:9 , category: 'Vegetables', image: Tomato , name: "Tomato", amount: "2,000/kg"},
+    {id:10 , category: 'Fruits', image: Banana , name: "Banana", amount: "1,000/1"},
+    {id:11 , category: 'Vegetables', image: Broccoli , name: "Broccoli", amount: "900/1"}, 
+    {id:12 , category: 'Vegetables', image: Corn , name: "Fresh Corn", amount: "200/1"}, 
+    {id:13 , category: 'Fish Feed', image: FishFeed , name: "Feed", amount: "16,000/bg"}, 
 ];
 
 export const testimonialDetails = [
