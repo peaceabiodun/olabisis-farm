@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from "assets/images/logo.svg";
+import { ReactComponent as LogoIcon } from "assets/icons/logo-icon.svg";
 import { NavLink } from "react-router-dom";
 import { navLinks } from "utils/data";
 import { BsCart3} from "react-icons/bs";
@@ -18,12 +18,13 @@ const NavbarHeader = () => {
     return ( 
         <div className="relative">
         {/* Desktop sreen  */}
-        <div className='hidden sm:flex bg-white py-5 px-6 md:px-11 items-center justify-between '>
-            <div>
-                <Logo className='w-[140px] md:w-[160px]' />
+        <div className='hidden sm:flex bg-current py-5 px-6 md:px-11 items-center justify-between '>
+            <div className="flex items-center">
+                <LogoIcon className='w-[26px] h-8 ' />
+                <p className="text-white text-[16px] md:text-lg ml-1">Olabisi's Farm</p>
             </div>
 
-            <div className=' text-[#274C5B] text-[16px] md:text-lg font-bold flex gap-6'>
+            <div className=' text-white text-[16px] md:text-lg font-bold flex gap-6'>
                 {navLinks.map((item)=>(
                     <NavLink key={item.id} to={item.link} id={item.id} className=''>
                         {item.title}
@@ -32,22 +33,23 @@ const NavbarHeader = () => {
             </div>
 
             <div className='flex border rounded-3xl h-[40px] items-center p-[2px] gap-2'>
-                <div className='bg-[#274C5B] p-2 rounded-full text-white'>
+                <div className='bg-white p-2 rounded-full text-current'>
                     <BsCart3 size={20} />
                 </div>
 
-                <p className='text-[#274C5B] text-sm font-bold mr-2 '>Cart(0)</p>
+                <p className='text-white text-sm font-bold mr-2 '>Cart(0)</p>
             </div>
 
         </div>
 
         {/* mobile screen */}
-        <div className="flex sm:hidden bg-white p-4 items-center justify-between">
-            <div>
-                <Logo className='w-[130px] h-6' />
+        <div className="flex sm:hidden bg-current p-4 items-center justify-between">
+            <div className="flex items-center">
+                <LogoIcon className='w-[26px] h-6' />
+                <p className="text-white">Olabisi's Farm</p>
             </div>
 
-            <div className="text-current gap-4 flex">
+            <div className="text-white gap-4 flex">
                 <BsCart3 size={22} />
                 <HiMenuAlt3 size={22} onClick={openMobileMenu} />
             </div>
