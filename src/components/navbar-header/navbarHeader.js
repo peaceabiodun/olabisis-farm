@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { navLinks } from "utils/data";
 import { BsCart3} from "react-icons/bs";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MobileMenu from "components/mobile-menu/mobileMenu";
 
 
@@ -18,6 +18,7 @@ const NavbarHeader = () => {
     return ( 
         <div className="relative">
         {/* Desktop sreen  */}
+
         <div className='hidden sm:flex bg-current py-5 px-6 md:px-11 items-center justify-between '>
             <div className="flex items-center">
                 <LogoIcon className='w-[26px] h-8 ' />

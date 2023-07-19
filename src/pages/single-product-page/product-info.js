@@ -1,5 +1,5 @@
-import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
 import "react-widgets/styles.css";
+import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
 import NumberPicker from "react-widgets/NumberPicker";
 import Select from 'react-dropdown-select';
 import {productSizeOptions } from 'utils/data';
@@ -11,17 +11,17 @@ const ProductInfo = ({productDetails}) => {
     const [quantity, setQuantity] = useState('')
     const [selectedSize, setSelectedSize] = useState('')
     return ( 
-        <div className='px-11 py-5'>
+        <div className='px-6 md:px-11 py-5'>
             <Link to='/shop'>
                 <BiArrowBack size={24} className='text-current' />
             </Link>
-            <div className=" grid grid-cols-2 gap-4">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                 <div className='m-4 flex justify-end items-center'>
-                    <div className="bg-[#F9F8F8] rounded-lg px-6 pb-6 pt-4 max-w-[400px] max-h-[400px]">
+                    <div className="bg-[#F9F8F8] rounded-lg px-6 pb-6 pt-3 max-w-[400px] max-h-[400px]">
                         <button className='bg-current text-[#EFF6F1]  py-1 px-2 rounded-md text-[10px] my-2'>{productDetails.category}</button>
                         <div className='flex justify-center items-center' >
-                            <img src={productDetails.image} alt='item' className='rounded-lg shadow-md max-h-[220px]' />
+                            <img src={productDetails.image} alt='item' className='rounded-lg shadow-md h-[180px] sm:h-[220px]' />
                         </div>
                     </div> 
                 </div>
@@ -43,7 +43,7 @@ const ProductInfo = ({productDetails}) => {
                                 min={0}
                                 quantity={quantity}
                                 onChange={()=>setQuantity(quantity)}
-                                className='mt-1 w-[90px]'
+                                className='mt-1 w-[60px] sm:w-[90px]'
                              />
                         </div>
                         <div  className='text-current text-sm'>
@@ -56,14 +56,14 @@ const ProductInfo = ({productDetails}) => {
                         </div>
                     </div>
 
-                    <button className='bg-current text-white w-[204px] h-[38px] rounded-[4px] text-sm'>
+                    <button className='bg-current text-white w-[174px] sm:w-[204px] h-[38px] rounded-[4px] text-sm'>
                         Add To cart
                     </button>
                    
                 </div>
             </div>
 
-            <div className='p-10 flex flex-col items-center space-y-3'>
+            <div className='p-10 flex flex-col items-center space-y-3 border rounded-[10px]'>
                 <h2 className='text-current text-sm'>Product Description</h2>
 
                 <div className='flex gap-3 '>

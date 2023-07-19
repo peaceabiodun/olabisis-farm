@@ -24,6 +24,8 @@ import Spinach from "assets/images/spinach.jpg";
 import Spinach1 from "assets/images/spinach1.jpg";
 import Spinach2 from "assets/images/spinach2.jpg";
 import FishFeed  from "assets/images/fishFeed.jpg";
+import FishFeed1  from "assets/images/fishFeed1.jpg";
+import FishFeed2  from "assets/images/fishFeed2.jpg";
 import Man1  from "assets/images/man1.jpg";
 import Man2  from "assets/images/man2.jpg";
 import Woman1  from "assets/images/woman1.jpg";
@@ -37,8 +39,11 @@ import Banana  from "assets/images/banana.jpg";
 import Banana1  from "assets/images/banana1.jpg";
 import Banana2  from "assets/images/banana2.jpg";
 import Broccoli  from "assets/images/Broccoli.jpg";
+import Broccoli1  from "assets/images/broccoli1.jpg";
+import Broccoli2  from "assets/images/broccoli2.jpg";
 import Corn  from "assets/images/corn.jpg";
-
+import Corn1  from "assets/images/corn1.jpg";
+import Corn2  from "assets/images/corn2.jpg";
 
 
 export const navLinks = [
@@ -173,9 +178,42 @@ export const productCard =[
             {id: "01", image: Banana1}, 
             {id: "02", image: Banana2}, 
         ],},
-    {id:"11" , category: 'Vegetables', image: Broccoli , name: "Broccoli", amount: "900/1", description: 'Broilers vary in size and weight, please pick the size and quantity that you want. '}, 
-    {id:"12" , category: 'Vegetables', image: Corn , name: "Fresh Corn", amount: "200/1", description: 'Broilers vary in size and weight, please pick the size and quantity that you want. '}, 
-    {id:"13" , category: 'Fish Feed', image: FishFeed , name: "Feed", amount: "16,000/bg", description: 'Broilers vary in size and weight, please pick the size and quantity that you want. '}, 
+    {
+        id:"11" ,
+        category: 'Vegetables', 
+        image: Broccoli , 
+        name: "Broccoli", 
+        amount: "900/1", 
+        description: 'Broilers vary in size and weight, please pick the size and quantity that you want.',
+        descriptive_images: [
+            {id: "01", image: Broccoli1}, 
+            {id: "02", image: Broccoli2}, 
+        ],
+    }, 
+    {
+        id:"12" , 
+        category: 'Vegetables', 
+        image: Corn , 
+        name: "Fresh Corn", 
+        amount: "200/1", 
+        description: 'Broilers vary in size and weight, please pick the size and quantity that you want.',
+        descriptive_images: [
+            {id: "01", image: Corn1}, 
+            {id: "02", image: Corn2}, 
+        ],
+    }, 
+    {
+        id:"13" , 
+        category: 'Fish Feed', 
+        image: FishFeed , 
+        name: "Feed", 
+        amount: "16,000/bg", 
+        description: 'Broilers vary in size and weight, please pick the size and quantity that you want.',
+        descriptive_images: [
+            {id: "01", image: FishFeed1}, 
+            {id: "02", image: FishFeed2}, 
+        ],
+    }, 
 ];
 
 export const testimonialDetails = [
