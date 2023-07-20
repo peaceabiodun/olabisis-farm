@@ -133,7 +133,7 @@ export const productCard =[
     },
     {
         id:"7" , 
-        category: 'vegetables', 
+        category: 'Vegetables', 
         image: Spinach, 
         name: "spinach", 
         amount: "500/bag", 
