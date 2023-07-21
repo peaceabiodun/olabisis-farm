@@ -6,19 +6,22 @@ import {
 import LandingPage from "pages/landing-page";
 import Shop from "pages/shop";
 import SingleProductPage from "pages/single-product-page";
+import CartProvider from "context/cart-context";
 
 
 
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/single-product/:id" element={<SingleProductPage />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/single-product/:id" element={<SingleProductPage />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

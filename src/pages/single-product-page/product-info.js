@@ -3,19 +3,36 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
 import NumberPicker from "react-widgets/NumberPicker";
-import Select from 'react-dropdown-select';
+import Select from 'react-select';
 import {productCard, productSizeOptions } from 'utils/data';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from "react-icons/bi";
 import Man1  from "assets/images/man1.jpg";
 import CartModal from "components/modals/cart-modal/cart-modal";
+import { CartContext } from "context/cart-context";
+
 
 const ProductInfo = ({productDetails}) => {
-    const [quantity, setQuantity] = useState('');
-    const [selectedSize, setSelectedSize] = useState('');
+    const [quantity, setQuantity] = useState(1);
+    const [selectedSize, setSelectedSize] = useState(null);
     const [openCartModal, setOpenCartModal] = useState(false);
+    const {addToCart} = useContext(CartContext);
     const relatedProducts = productCard.filter((product) => product.category === productDetails.category);
+
+    const handleAddToCart = () => {
+        setOpenCartModal(true);
+        const productToAdd = {
+            id: productDetails.id,
+            image: productDetails.image,
+            amount: productDetails.amount,
+            name: productDetails.name,
+            quantity:quantity,
+            size: selectedSize,
+        };
+        addToCart(productToAdd);
+       
+    };
 
     return ( 
         <div>
@@ -43,30 +60,32 @@ const ProductInfo = ({productDetails}) => {
                     
                     <p className='text-[#525C60] text-xs'>{productDetails.description}</p>
 
-                    <div className='flex gap-3'>
+                    <div className='flex  gap-3'>
                         <div className='text-current text-sm'>
                             <p>Quantity:</p>
                             <NumberPicker 
                                 defaultValue={1}
-                                min={0}
-                                quantity={quantity}
-                                onChange={()=>setQuantity(quantity)}
+                                min={1}
+                                value={quantity}
+                                onChange={setQuantity}
                                 className='mt-1 w-[90px]'
                              />
                         </div>
                         <div  className='text-current text-sm'>
                             <p>Size:</p>
                             <Select 
-                                options={productSizeOptions}
-                                multi={true}
-                                className='mt-1 w-[90px] h-[38px]'
+                                options={productSizeOptions} 
+                                defaultValue={selectedSize} 
+                                onChange={setSelectedSize}   
+                                className='mt-1 text-[12px] h-[38px]' 
                             />
                         </div>
                     </div>
 
                     <button 
-                        onClick={()=> setOpenCartModal(true)}
-                        className='bg-current text-white w-[204px] h-[38px] rounded-[4px] text-sm'>
+                        disabled ={!selectedSize || !quantity}
+                        onClick={ handleAddToCart}
+                        className='bg-current text-white w-[210px] h-[38px] rounded-[4px] text-sm'>
                         Add To cart
                     </button>
                    
@@ -94,15 +113,15 @@ const ProductInfo = ({productDetails}) => {
                 
             </div>
 
-            <div className="py-5 sm:py-10 lex flex-col items-center ">
+            <div className="py-5 sm:py-10 flex flex-col items-center ">
                 <h2  className="text-current text-sm text-center mb-3">Related Products</h2>
-                <div className='space-y-3 overflow-x-auto scroll-smooth flex gap-2' >
+                <div className='overflow-x-auto scroll-smooth flex gap-2 w-full sm:justify-center' >
                 
                     {relatedProducts.length > 0 ? (
                         relatedProducts.map((product) => (
                             <Link
                                 to={`/single-product/${product.id}`}
-                                className='border rounded-[12px] p-2 md:p-3 w-[250px] '>
+                                className='border rounded-[12px] p-2 md:p-3 min-w-[270px]  '>
                                 <button className='bg-current py-1 px-2 text-[9px] xs:text-[10px] text-white rounded-md'>{product.category}</button>
                                 <div className='p-1 sm:p-3'>
                                     <img src={product.image} alt="items" className='rounded-lg shadow-lg w-[200px] h-[160px]' />
