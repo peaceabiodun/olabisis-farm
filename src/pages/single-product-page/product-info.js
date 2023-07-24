@@ -85,7 +85,7 @@ const ProductInfo = ({productDetails}) => {
                     <button 
                         disabled ={!selectedSize || !quantity}
                         onClick={ handleAddToCart}
-                        className='bg-current text-white w-[210px] h-[38px] rounded-[4px] text-sm'>
+                        className={` w-[210px] h-[38px] rounded-[4px] text-sm ${!selectedSize || !quantity ? 'bg-[#c2d8e2] cursor-not-allowed': 'bg-current text-white'} `}>
                         Add To cart
                     </button>
                    
@@ -98,7 +98,7 @@ const ProductInfo = ({productDetails}) => {
                 <Carousel showArrows={false} showThumbs={false} className=" sm:w-[400px] rounded-[10px]" >
                     {productDetails.descriptive_images.map((item) =>(
                     <div key={item.id} >
-                        <img src={item.image} alt='descriptive' className='rounded-[10px] w-[300px] h-[300px]'/>
+                        <img src={item.image} alt='descriptive' className='rounded-[10px] w-[300px] h-[280px]'/>
                     </div>
                     ))}
                 </Carousel>
@@ -121,9 +121,9 @@ const ProductInfo = ({productDetails}) => {
                         relatedProducts.map((product) => (
                             <Link
                                 to={`/single-product/${product.id}`}
-                                className='border rounded-[12px] p-2 md:p-3 min-w-[270px]  '>
+                                className='border rounded-[12px] p-2 md:p-3 min-w-[270px] '>
                                 <button className='bg-current py-1 px-2 text-[9px] xs:text-[10px] text-white rounded-md'>{product.category}</button>
-                                <div className='p-1 sm:p-3'>
+                                <div className='p-1 sm:p-3 flex justify-center'>
                                     <img src={product.image} alt="items" className='rounded-lg shadow-lg w-[200px] h-[160px]' />
                                 </div>
                                 <p className='text-xs text-current mb-2'>{product.name}</p>

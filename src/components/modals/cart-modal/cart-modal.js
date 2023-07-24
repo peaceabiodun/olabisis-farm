@@ -1,5 +1,5 @@
 import {MdClose} from "react-icons/md";
-import { useContext } from "react";
+import { useContext } from "react"; 
 import { CartContext } from "context/cart-context";
 
 const CartModal = ({onClose}) => {

@@ -3,13 +3,16 @@ import { NavLink } from "react-router-dom";
 import { navLinks } from "utils/data";
 import { BsCart3} from "react-icons/bs";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import MobileMenu from "components/mobile-menu/mobileMenu";
+import { CartContext } from "context/cart-context";
 
 
 const NavbarHeader = () => {
 
+    const {cartItems} = useContext(CartContext);
     const [toggleMenu, setToggleMenu] = useState(false);
+    const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
     const openMobileMenu = ()=>{
         setToggleMenu(!toggleMenu)
@@ -38,7 +41,7 @@ const NavbarHeader = () => {
                     <BsCart3 size={20} />
                 </div>
 
-                <p className='text-white text-sm font-bold mr-2 '>Cart(0)</p>
+                <p className='text-white text-sm font-bold mr-2 '>Cart({totalItemsInCart})</p>
             </div>
 
         </div>

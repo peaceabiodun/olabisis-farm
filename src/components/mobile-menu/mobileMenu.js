@@ -6,7 +6,7 @@ import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 const MobileMenu = ({onClose}) => {
     return ( 
-        <div className='fixed z-40 top-0 bottom-0 bg-white w-[60%] h-full text-sm'>
+        <div className='fixed z-40 top-0 bottom-0 bg-white w-[60%] h-full text-sm shadow-md'>
             <div className="bg-current text-white flex items-center justify-between h-[56px] px-4">
                 <div className="flex items-center gap-2">
                     <BsHeart />
