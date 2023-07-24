@@ -1,5 +1,5 @@
 import { ReactComponent as LogoIcon } from "assets/icons/logo-icon.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { navLinks } from "utils/data";
 import { BsCart3} from "react-icons/bs";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -30,19 +30,19 @@ const NavbarHeader = () => {
 
             <div className=' text-white text-[16px] md:text-lg font-bold flex gap-6'>
                 {navLinks.map((item)=>(
-                    <NavLink key={item.id} to={item.link} id={item.id} className=''>
+                    <NavLink key={item.id} to={item.link} id={item.id} className='font-[400]'>
                         {item.title}
                     </NavLink>
                 ))}
             </div>
 
-            <div className='flex border rounded-3xl h-[40px] items-center p-[2px] gap-2'>
+            <Link to="/cart" className='flex border rounded-3xl h-[40px] items-center p-[2px] gap-2'>
                 <div className='bg-white p-2 rounded-full text-current'>
                     <BsCart3 size={20} />
                 </div>
 
                 <p className='text-white text-sm font-bold mr-2 '>Cart({totalItemsInCart})</p>
-            </div>
+            </Link>
 
         </div>
 

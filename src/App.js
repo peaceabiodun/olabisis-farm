@@ -7,6 +7,7 @@ import LandingPage from "pages/landing-page";
 import Shop from "pages/shop";
 import SingleProductPage from "pages/single-product-page";
 import CartProvider from "context/cart-context";
+import Cart from "pages/cart-page/cart";
 
 
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/single-product/:id" element={<SingleProductPage />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
     </CartProvider>

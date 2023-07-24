@@ -6,22 +6,21 @@ import NumberPicker from "react-widgets/NumberPicker";
 import Select from 'react-select';
 import {productCard, productSizeOptions } from 'utils/data';
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BiArrowBack } from "react-icons/bi";
 import Man1  from "assets/images/man1.jpg";
-import CartModal from "components/modals/cart-modal/cart-modal";
 import { CartContext } from "context/cart-context";
 
 
 const ProductInfo = ({productDetails}) => {
     const [quantity, setQuantity] = useState(1);
     const [selectedSize, setSelectedSize] = useState(null);
-    const [openCartModal, setOpenCartModal] = useState(false);
     const {addToCart} = useContext(CartContext);
+    const navigate = useNavigate();
     const relatedProducts = productCard.filter((product) => product.category === productDetails.category);
 
     const handleAddToCart = () => {
-        setOpenCartModal(true);
+        navigate("/cart")
         const productToAdd = {
             id: productDetails.id,
             image: productDetails.image,
@@ -166,9 +165,6 @@ const ProductInfo = ({productDetails}) => {
 
         </div>
 
-        {openCartModal && 
-            <CartModal onClose={()=> setOpenCartModal(false)} />
-        }
         </div>
      );
 }

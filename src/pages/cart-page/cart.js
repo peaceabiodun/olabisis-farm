@@ -1,19 +1,43 @@
 import {MdClose} from "react-icons/md";
 import { useContext } from "react"; 
 import { CartContext } from "context/cart-context";
+import NavbarHeader from "components/navbar-header/navbarHeader";
+import Footer from "components/page-footer/footer";
 
-const CartModal = ({onClose}) => {
+const Cart = () => {
 
     const {cartItems} = useContext(CartContext);
     const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.quantity, 0);
     return ( 
         <div className=''>
-            <div id="scroll" className='shadow-lg absolute top-0 right-0 w-[200px] h-full sm:w-[350px] overflow-auto bg-white'>
+            <NavbarHeader />
+                <div className="p-5 md:p-10">
+                    <h1>Shopping Cart</h1>
+                    <p>There are {totalItemsInCart} products in your shopping cart</p>
+                </div>
+
+                {cartItems.map((items, index) => (
+                <div className="flex justify-between">
+                    <div className="flex ">
+                        <img src={items.image} alt="/" className="w-[200px] border rounded-[8px]" />
+                        <div>
+                            <p>{items.name}</p>
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <p>remove</p>
+                    </div>
+                </div>
+                ))}
+            <Footer />
+            {/* <div id="scroll" className='shadow-lg absolute top-0 right-0 w-[200px] h-full sm:w-[350px] overflow-auto bg-white'>
                 <div className="flex justify-between items-center border-b p-3 bg-current text-white h-[56px] sm:h-[80px]">
                     <div></div>
                     <h2 className="text-sm sm:text-lg">Added to cart</h2>
                     <div className='p-1 sm:p-2 rounded-full bg-[#D4D4D4]'>
-                        <MdClose onClick={onClose} className="cursor-pointer text-current " />
+                        <MdClose className="cursor-pointer text-current " />
                     </div>  
                 </div>
 
@@ -44,10 +68,10 @@ const CartModal = ({onClose}) => {
                         Proceed to checkout ({totalItemsInCart} item{totalItemsInCart !== 1 ? 's' : ''})
                     </button>
                 </div>
-            </div>
+            </div> */}
 
         </div>
      );
 }
  
-export default CartModal;
+export default Cart;

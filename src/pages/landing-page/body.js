@@ -9,6 +9,7 @@ import Image7 from "assets/images/img7.jpg";
 import Farm from "assets/images/farm2.jpg";
 import { BsFillArrowRightCircleFill} from "react-icons/bs";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
+import { BsHeart} from "react-icons/bs";
 import { productCard, stats, testimonialDetails } from "utils/data";
 
 
@@ -71,8 +72,13 @@ const Body = () => {
                 <div className=' grid grid-cols-2 md:grid-cols-3 mdLg:grid-cols-4 gap-3 my-5'>
                 {productCard.map((item) =>(
                     <div key={item.id} className='bg-[#F9F8F8] rounded-[12px] p-2 sm:p-3'>
-                        <button className='bg-current py-1 px-2 text-[9px] xs:text-[10px] text-white rounded-md'>{item.category}</button>
-                        <div className='p-1 sm:p-3'>
+                        <div className="flex justify-between">
+                            <button className='bg-current py-1 px-2 text-[8px] xs:text-[9px] text-white rounded-md'> {item.category}
+                            </button>
+                            <BsHeart size={14} className="text-current" />
+                        </div>
+                       
+                        <div className='p-[6px] sm:p-3'>
                             <img src={item.image} alt="items" className='rounded-lg shadow-lg w-[150px] sm:w-[200px] h-[100px] sm:h-[160px]' />
                         </div>
                         <p className='text-xs text-current mb-2'>{item.name}</p>

@@ -1,6 +1,7 @@
 import Image8 from "assets/images/img8.jpg";
 import { productCard } from "utils/data";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
+import { BsHeart} from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 
@@ -22,9 +23,14 @@ const Body = () => {
                     <Link 
                         key={item.id} 
                         to={`/single-product/${item.id}`}
-                        className='bg-[#F9F8F8] rounded-[12px] p-2 md:p-3 '>
-                        <button className='bg-current py-1 px-2 text-[9px] xs:text-[10px] text-white rounded-md'>{item.category}</button>
-                        <div className='p-1 sm:p-3'>
+                        className='bg-[#F9F8F8] rounded-[12px] p-[6px] md:p-3 '>
+                        <div className="flex justify-between">
+                            <button className='bg-current py-1 px-2 text-[8px] xs:text-[10px] text-white rounded-md'>{item.category}
+                            </button>
+                            <BsHeart size={14} className="text-current" />
+                        </div>
+                        
+                        <div className='p-[6px] sm:p-3'>
                             <img src={item.image} alt="items" className='rounded-lg shadow-lg w-[150px] sm:w-[200px] h-[100px] sm:h-[160px]' />
                         </div>
                         <p className='text-xs text-current mb-2'>{item.name}</p>
