@@ -1,75 +1,101 @@
-import {MdClose} from "react-icons/md";
-import { useContext } from "react"; 
+import { useContext, useState } from "react"; 
+import { useNavigate } from "react-router-dom";
+import NumberPicker from "react-widgets/NumberPicker";
 import { CartContext } from "context/cart-context";
 import NavbarHeader from "components/navbar-header/navbarHeader";
 import Footer from "components/page-footer/footer";
+import {BsTrash3, BsCart3,  } from "react-icons/bs";
+import { MdArrowBackIosNew } from "react-icons/md";
+
+
 
 const Cart = () => {
 
-    const {cartItems} = useContext(CartContext);
+    const navigate = useNavigate();
+    const {cartItems, updateCartItemQuantity, removeItemFromCart} = useContext(CartContext);
     const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.quantity, 0);
     return ( 
         <div className=''>
             <NavbarHeader />
                 <div className="p-5 md:p-10">
-                    <h1>Shopping Cart</h1>
-                    <p>There are {totalItemsInCart} products in your shopping cart</p>
-                </div>
-
-                {cartItems.map((items, index) => (
-                <div className="flex justify-between">
-                    <div className="flex ">
-                        <img src={items.image} alt="/" className="w-[200px] border rounded-[8px]" />
-                        <div>
-                            <p>{items.name}</p>
-
-                        </div>
-                    </div>
-
                     <div>
-                        <p>remove</p>
+                        <h1 className="text-xl text-current font-bold">Shopping Cart</h1>
+                        <p className="text-[#525C60] text-xs">There are {totalItemsInCart} items in your shopping cart</p>
                     </div>
-                </div>
-                ))}
-            <Footer />
-            {/* <div id="scroll" className='shadow-lg absolute top-0 right-0 w-[200px] h-full sm:w-[350px] overflow-auto bg-white'>
-                <div className="flex justify-between items-center border-b p-3 bg-current text-white h-[56px] sm:h-[80px]">
-                    <div></div>
-                    <h2 className="text-sm sm:text-lg">Added to cart</h2>
-                    <div className='p-1 sm:p-2 rounded-full bg-[#D4D4D4]'>
-                        <MdClose className="cursor-pointer text-current " />
-                    </div>  
-                </div>
 
-                {cartItems.map((items, index) => (
-                    <div key={index}>
-                        <div className="flex justify-center p-3 border-b gap-4">
-                            <img src={items.image} alt="/" className='rounded-[10px] w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]' />
-                            <div className="text-current ">
-                                <p className="text-sm">{items.name}</p>
-                                <p className="text-xs text-[#a0a096]">quantity: {items.quantity}</p>
-                                <p className="text-xs text-[#a0a096]">size: {items.size.label}</p>
+                    {cartItems.length == 0? 
+                    <div className="w-full h-[50vh] flex items-center justify-center text-current text-lg"> 
+                        Cart is empty 
+                    </div>
+                    :
+                    <div className="flex flex-col sm:flex-row w-full gap-4">
+                        <div className="my-5 sm:w-[70%]">
+                            {cartItems.map((items, index) => (
+                            <div key={index} className="flex justify-between border-b p-3">
+                                <div className="flex gap-3">
+                                    <img src={items.image} alt="/" className="w-[100px] h-[100px] border rounded-[8px]" />
+                                    <div className="text-current">
+                                        <p className="text-sm">{items.name}</p>
+                                        <NumberPicker 
+                                            min={1}
+                                            value={items.quantity}
+                                            onChange={(newQuantity)=> updateCartItemQuantity(items.id, newQuantity)}
+                                            className='mt-1 w-[90px] text-xs mb-1'
+                                        />
+                                        <p className="text-xs text-[#92a1a7]">{items.size.label}</p>
+                                        <p className="text-sm">{items.amount}</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center">
+                                    <BsTrash3 
+                                        onClick={()=> removeItemFromCart(items.id)} 
+                                        className="text-current "
+                                        size={18} 
+                                    />
+                                </div>
                             </div>
+                            ))}
+
                         </div>
-                        
+
+                        <div className="border rounded-md p-3 sm:w-[40%] h-[250px] text-sm">
+                            <div className="flex justify-between py-2 border-b">
+                                <p className="text-current ">Subtotal:</p>
+                                <p className="text-[#8d9ba0]">$00.00</p>
+                            </div>
+
+                            <div className="flex justify-between py-2 border-b">
+                                <p className="text-current text-sm">Discount:</p>
+                                <p className="text-[#8d9ba0]">$00.00</p>
+                            </div>
+
+                            <div className="flex justify-between py-2 border-b">
+                                <p className="text-current text-sm">Shipping fee:</p>
+                                <p className="text-[#8d9ba0]">$00.00</p>
+                            </div>
+
+                            <div className="flex justify-between py-2 ">
+                                <p className="text-current text-sm">Total:</p>
+                                <p className="text-[#8d9ba0]">$00.00</p>
+                            </div>
+                                
+                            <button className="bg-current flex text-white text-sm w-full py-1 px-2 rounded-md mt-2 justify-center">
+                                Checkout
+                                <BsCart3 className="ml-1" />
+                            </button>
+                        </div>
+
                     </div>
-                ))}
-
-                <div className="flex justify-center my-3 gap-1 text-current text-sm">
-                    <p>Cart Subtotal ({totalItemsInCart} item{totalItemsInCart !== 1 ? 's' : ''}):</p>
-                    <p>30,000</p>
-                </div>
-
-                <div className="flex flex-col xs:flex-row gap-2 justify-center mx-3 mb-3">
-                    <button className="border rounded-md text-xs text-current p-2">
-                        Remove from Cart
-                    </button>
-                    <button className="bg-current rounded-md text-xs text-white p-2">
-                        Proceed to checkout ({totalItemsInCart} item{totalItemsInCart !== 1 ? 's' : ''})
+                     }
+                    <button 
+                        onClick={()=> navigate('/shop')} className="bg-[#EFD372] text-sm text-current py-1 px-2 rounded-md mt-5 flex justify-center items-center">
+                        <MdArrowBackIosNew />
+                        Back to shopping
                     </button>
                 </div>
-            </div> */}
-
+            <Footer />
+            
         </div>
      );
 }

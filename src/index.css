@@ -37,3 +37,18 @@ body {
   color: #274C5B !important;
   font-size: 12px !important;
 }
+
+.rw-widget svg{
+  color: #525C60 !important;
+}
+
+.rw-widget-picker {
+  height: 32px !important;
+}
+
+.rw-widget-input {
+  font-size: 14px !important;
+}
+.rw-input-addon{
+  border-left: 0px !important;
+}

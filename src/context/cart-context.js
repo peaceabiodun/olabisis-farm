@@ -18,8 +18,21 @@ const CartProvider =({children})=> {
         }
     };
 
+    const updateCartItemQuantity = (itemId, newItemQuantity)=>{
+        setCartItems((prevItems) => 
+            prevItems.map((item) =>
+                item.id === itemId ? {...item, quantity: newItemQuantity} : item
+            )
+        );
+    };
+
+    const removeItemFromCart =(itemId)=>{
+        setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId))
+    };
+
+
     return(
-        <CartContext.Provider value={{cartItems, addToCart}}>
+        <CartContext.Provider value={{cartItems, addToCart, updateCartItemQuantity, removeItemFromCart}}>
             {children}
         </CartContext.Provider>
     )
