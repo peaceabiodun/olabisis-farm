@@ -49,7 +49,7 @@ import Corn2  from "assets/images/corn2.jpg";
 export const navLinks = [
     {id:1, title: "Home", link: "/"},
     {id:2, title: "Shop", link: "/shop"},
-    {id:3, title: "Projects", link: "/projects"},
+    {id:3, title: "Farms", link: "/farms"},
     {id:4, title: "Contact", link: "/contact"},
 
 ];

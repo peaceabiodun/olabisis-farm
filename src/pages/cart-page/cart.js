@@ -24,8 +24,8 @@ const Cart = () => {
                     </div>
 
                     {cartItems.length == 0? 
-                    <div className="w-full h-[50vh] flex items-center justify-center text-current text-lg"> 
-                        Cart is empty 
+                    <div className="w-full h-[50vh] flex items-center justify-center text-current text-xl"> 
+                        Shopping Cart is Empty 
                     </div>
                     :
                     <div className="flex flex-col sm:flex-row w-full gap-4">
