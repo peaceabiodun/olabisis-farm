@@ -13,12 +13,11 @@ import { BsHeart} from "react-icons/bs";
 import { productCard, stats, testimonialDetails } from "utils/data";
 
 
-
 const Body = () => {
     return (
        <div className=''>    
             <div className='relative flex items-center '>
-                <img src={Image1} alt="farm pictures" className='h-[90vh] w-full' />
+                <img src={Image1} alt="farm pictures" className='h-[100vh] w-full' />
                 <div className='absolute flex flex-col items-start  max-w-[450px] px-4 md:pl-[100px]'>
                     <p className='text-[#c4ffda] italic'>Choose the best healthier way of life</p>
                     <h2 className='text-2xl md:text-4xl text-[#ffffff] font-bold'>Welcome to the world of Nature and Clean Breeds</h2>
@@ -65,9 +64,7 @@ const Body = () => {
           
 
             <div className=' flex flex-col items-center justify-center p-5 mdLg:p-10'>
-                <h3 className='text-[#7EB693] font-Yellowtail text-lg'>Categories</h3>
-                <h2 className='text-current font-semibold text-lg sm:text-xl'>Our Products</h2>
-
+                <h2 className='text-current font-semibold text-lg sm:text-xl'>Popular Products</h2>
                
                 <div className=' grid grid-cols-2 md:grid-cols-3 mdLg:grid-cols-4 gap-3 my-5'>
                 {productCard.map((item) =>(

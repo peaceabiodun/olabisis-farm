@@ -44,6 +44,17 @@ import Broccoli2  from "assets/images/broccoli2.jpg";
 import Corn  from "assets/images/corn.jpg";
 import Corn1  from "assets/images/corn1.jpg";
 import Corn2  from "assets/images/corn2.jpg";
+import GoatOutline from "assets/images/goat-outline.png";
+import VegeOutline from "assets/images/vegetable-outline.png";
+import EggOutline from "assets/images/egg-outline.png";
+import FishOutline from "assets/images/fish-outline.png";
+import FruitOutline from "assets/images/fruit-outline.png";
+import HenOutline from "assets/images/hen-outline.png";
+import sackOutline from "assets/images/sack-outline.png";
+import Img10 from "assets/images/img10.jpg";
+import Img11 from "assets/images/img11.jpg";
+import Img12 from "assets/images/img12.jpg";
+import Img13 from "assets/images/img13.jpg";
 
 
 export const navLinks = [
@@ -51,6 +62,52 @@ export const navLinks = [
     {id:2, title: "Shop", link: "/shop"},
     {id:3, title: "Farms", link: "/farms"},
     {id:4, title: "Contact", link: "/contact"},
+
+];
+
+export const categories = [
+    {id: 1, image: GoatOutline, name: "Livestock"},
+    {id: 2, image: FishOutline, name: "Sea Food" },
+    {id: 3, image: FruitOutline, name: "Fruits" },
+    {id: 4, image: VegeOutline, name: "Vegetables" },
+    {id: 5, image: HenOutline, name: "Poultry" },
+    {id: 6, image: EggOutline, name: "Dairy" },
+    {id: 7, image: sackOutline, name: "Fish Feed" },
+];
+
+export const hotDeals = [
+    {
+        id:1, 
+        image:Img10, 
+        time:'5 days left', 
+        description:'Medium sized catfish for as low as 1000 naira per kilo', 
+        newPrice: '1000', 
+        oldPrice: '2000',
+    },
+    {
+        id:2, 
+        image:Img11, 
+        time:'5 days left', 
+        description:'Big basket of Tomato for 7,000', 
+        newPrice: '7,000', 
+        oldPrice: '10,000',
+    },
+    {
+        id:3, 
+        image:Img12, 
+        time:'5 days left', 
+        description:'Get Discounts on small - medium sized Cattles', 
+        newPrice: '76,000', 
+        oldPrice: '100,000',
+    },
+    {
+        id:4, 
+        image:Img13, 
+        time:'5 days left', 
+        description:'Vegetables are on discount now, click to find out more', 
+        newPrice: '50% discount', 
+        oldPrice: '100%',
+    },
 
 ];
 

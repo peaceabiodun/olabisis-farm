@@ -10,6 +10,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BiArrowBack } from "react-icons/bi";
 import Man1  from "assets/images/man1.jpg";
 import { CartContext } from "context/cart-context";
+import { BsArrowRight } from "react-icons/bs";
 
 
 const ProductInfo = ({productDetails}) => {
@@ -113,8 +114,11 @@ const ProductInfo = ({productDetails}) => {
             </div>
 
             <div className="py-5 sm:py-10 flex flex-col items-center ">
-                <h2  className="text-current text-sm text-center mb-3">Related Products</h2>
-                <div className='overflow-x-auto scroll-smooth flex gap-2 w-full sm:justify-center' >
+                <div className="text-current flex ">
+                    <h2  className="text-current text-sm text-center mb-3">Related Products</h2>
+                    <BsArrowRight className="ml-2 md:hidden "/>
+                </div>
+                <div id="scroll" className='overflow-x-auto scroll-smooth flex gap-2 w-full mdLg:justify-center' >
                 
                     {relatedProducts.length > 0 ? (
                         relatedProducts.map((product) => (
