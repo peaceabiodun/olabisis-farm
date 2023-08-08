@@ -9,6 +9,8 @@ import SingleProductPage from "pages/single-product-page";
 import CartProvider from "context/cart-context";
 import Cart from "pages/cart-page/cart";
 import ContactPage from "pages/contact-page";
+import ShopCategories from "pages/shop/categories";
+
 
 
 
@@ -20,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:productCategory" element={<ShopCategories />} />
           <Route path="/single-product/:id" element={<SingleProductPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<ContactPage />} />

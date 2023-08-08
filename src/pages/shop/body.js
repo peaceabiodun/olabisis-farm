@@ -1,5 +1,4 @@
 import Image8 from "assets/images/img8.jpg";
-import GoatOutline from "assets/images/goat-outline.png";
 import { categories, hotDeals, productCard } from "utils/data";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
 import { BsHeart} from "react-icons/bs";
@@ -9,7 +8,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 
 const Body = () => (
-    <div>
+    <div className="">
         <div className="relative flex items-center justify-center">
             <img src={Image8} alt="fruits" />
 
@@ -23,12 +22,12 @@ const Body = () => (
                 <h2 className="font-semibold text-lg sm:text-xl">Shop by Categories</h2>
                 <BsArrowRight className="ml-2 md:hidden "/>
             </div>
-            <div id="scroll" className=" py-3 flex md:justify-center gap-4 overflow-x-auto scroll-smooth w-full">
+            <div id="scroll" className="py-5 flex md:justify-center gap-4 overflow-x-auto scroll-smooth w-full">
                 {categories.map((item) =>(
-                <div key={item.id} className="bg-white shadow-md text-current text-xs p-3 border cursor-pointer rounded-md transition-transform transform hover:scale-105 hover:translate-x-1 hover:translate-y-1">
+                <Link key={item.id} to={`/shop/${item.name}`} className="bg-white shadow-md text-current text-xs p-3 border cursor-pointer rounded-md transition-transform transform hover:scale-105 hover:translate-x-1 hover:translate-y-1">
                     <img src={item.image} alt="" className="max-w-[60px] max-h-[60px]" />
                     <p className="mt-2 text-center">{item.name}</p>
-                </div>
+                </Link>
                 ))}
             </div>
         </div>
@@ -62,12 +61,24 @@ const Body = () => (
             </div>
         </div>
 
-        <div>
-            <h2>Hot Deals</h2>
-            <div className="flex gap-4">
+        <div className="p-5 md:p-10 flex flex-col items-center ">
+            <h2 className="text-current font-semibold text-lg sm:text-xl">Hot Deals</h2>
+            <div id="scroll" className="flex gap-4 mt-5 w-full overflow-auto scroll-smooth lg:justify-center">
                 {hotDeals.map((item)=>(
-                <div key={item.id} className="">
-                    <img src={item.image} alt="" />
+                <div key={item.id} className="relative flex items-center cursor-pointer">
+                    <img src={item.image} alt="" className="max-w-[230px] max-h-[200px] rounded-lg" />
+
+                    <div className="absolute flex flex-col items-center ">
+                        <h2 className="text-sm bg-white rounded-md p-1 text-current">2 Days left</h2>
+                        <div className="bg-white rounded-md p-3 m-3">
+                            <h2 className="text-xs">{item.description}</h2>
+                            <StarIcon className="w-[50px]" />
+                            <div className="flex gap-2 text-xs">
+                                <p className="text-current ">{item.newPrice}</p>
+                                <p className="text-[#b5bfc4] line-through">{item.oldPrice}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 ))}
             </div>

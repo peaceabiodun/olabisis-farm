@@ -202,7 +202,7 @@ export const productCard =[
     }, 
     {
         id:"8" , 
-        category: 'Diary', 
+        category: 'Dairy', 
         image: Eggs , 
         name: "Eggs", 
         amount: "2,000/crt", 
