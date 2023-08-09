@@ -124,7 +124,7 @@ const ProductInfo = ({productDetails}) => {
                         relatedProducts.map((product) => (
                             <Link
                                 to={`/single-product/${product.id}`}
-                                className='border rounded-[12px] p-2 md:p-3 min-w-[270px] '>
+                                className='border rounded-[12px] p-2 md:p-3 min-w-[265px] '>
                                 <button className='bg-current py-1 px-2 text-[9px] xs:text-[10px] text-white rounded-md'>{product.category}</button>
                                 <div className='p-1 sm:p-3 flex justify-center'>
                                     <img src={product.image} alt="items" className='rounded-lg shadow-lg w-[200px] h-[160px]' />

@@ -4,6 +4,7 @@ import { BsHeart } from "react-icons/bs";
 import { hotDeals, productCard } from "utils/data";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
 import { Link } from "react-router-dom";
+import CategoryMobileNav from "components/category-mobile-nav/category-mobile-nav";
 
 
 
@@ -69,7 +70,7 @@ const CategoriesBody = ({productsInCategory}) => {
                     ))}
                 </div>
             </div>
-
+            <CategoryMobileNav />
         </div>
      );
 }

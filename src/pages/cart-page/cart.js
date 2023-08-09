@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"; 
+import { useContext } from "react"; 
 import { useNavigate } from "react-router-dom";
 import NumberPicker from "react-widgets/NumberPicker";
 import { CartContext } from "context/cart-context";
@@ -23,13 +23,13 @@ const Cart = () => {
                         <p className="text-[#525C60] text-xs">There are {totalItemsInCart} items in your shopping cart</p>
                     </div>
 
-                    {cartItems.length == 0? 
+                    {cartItems.length === 0? 
                     <div className="w-full h-[50vh] flex items-center justify-center text-current text-xl"> 
                         Shopping Cart is Empty 
                     </div>
                     :
                     <div className="flex flex-col sm:flex-row w-full gap-4">
-                        <div className="my-5 sm:w-[70%]">
+                        <div className="my-5 sm:w-[70%] h-full border rounded-md">
                             {cartItems.map((items, index) => (
                             <div key={index} className="flex justify-between border-b p-3">
                                 <div className="flex gap-3">
@@ -50,7 +50,7 @@ const Cart = () => {
                                 <div className="flex items-center">
                                     <BsTrash3 
                                         onClick={()=> removeItemFromCart(items.id)} 
-                                        className="text-current "
+                                        className="text-current cursor-pointer "
                                         size={18} 
                                     />
                                 </div>
@@ -59,7 +59,7 @@ const Cart = () => {
 
                         </div>
 
-                        <div className="border rounded-md p-3 sm:w-[40%] h-[250px] text-sm">
+                        <div className="border my-5 rounded-md p-3 sm:w-[40%] h-[250px] text-sm">
                             <div className="flex justify-between py-2 border-b">
                                 <p className="text-current ">Subtotal:</p>
                                 <p className="text-[#8d9ba0]">$00.00</p>
@@ -80,7 +80,7 @@ const Cart = () => {
                                 <p className="text-[#8d9ba0]">$00.00</p>
                             </div>
                                 
-                            <button className="bg-current flex text-white text-sm w-full py-1 px-2 rounded-md mt-2 justify-center">
+                            <button onClick={()=>(navigate("/checkout"))} className="bg-current flex text-white text-sm w-full py-1 px-2 rounded-md mt-2 justify-center">
                                 Checkout
                                 <BsCart3 className="ml-1" />
                             </button>
