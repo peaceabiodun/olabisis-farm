@@ -12,17 +12,21 @@ const tabs = [
 
 const CheckoutBody = () => {
     const [CheckoutTabs, setCheckoutTabs] = useState(tabs[0].tab);
+
+    const handleTabChange = (tabId) => {
+        setCheckoutTabs(tabId);
+    };
     return ( 
         <div className="p-5 md:p-10">
             <div className="flex flex-col">
                 <h1 className="text-xl text-current font-bold">Checkout</h1>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-3">
                     {tabs.map((item) =>(
                     <div key={item.id} className="flex" >
-                        <div onClick={() =>{setCheckoutTabs(item.tab)}} className={`flex flex-col items-center text-sm cursor-pointer ${item.tab === CheckoutTabs? 'text-[#ebc950]' : 'text-[#b1b1af]'} `}>
+                        <div onClick={() =>{setCheckoutTabs(item.tab)}} className={`flex flex-col items-center text-xs sm:text-sm cursor-pointer ${item.tab === CheckoutTabs? 'text-[#ebc950]' : 'text-[#b1b1af]'} `}>
                             <AiFillCheckCircle className='' />
-                            <p className="">{item.tab}</p>
+                            <p className="whitespace-nowrap">{item.tab}</p>
                         </div>
 
                         {item.id === 1 && <div className="border w-[80px] h-[1px] bg-[#e9e9e7]"></div>}
@@ -35,9 +39,10 @@ const CheckoutBody = () => {
                     <MdArrowBackIosNew />
                     <p>Back to Cart</p>
                 </Link>
+
                 <div>  
                     {CheckoutTabs === tabs[0].tab &&      
-                        <DeliveryDetailsForm />
+                        <DeliveryDetailsForm onNext={() => handleTabChange(tabs[1].id)} />
                     }
 
                     {CheckoutTabs === tabs[1].tab &&      
