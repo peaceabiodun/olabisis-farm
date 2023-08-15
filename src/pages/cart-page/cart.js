@@ -1,6 +1,5 @@
 import { useContext } from "react"; 
 import { useNavigate } from "react-router-dom";
-import NumberPicker from "react-widgets/NumberPicker";
 import { CartContext } from "context/cart-context";
 import NavbarHeader from "components/navbar-header/navbarHeader";
 import Footer from "components/page-footer/footer";
@@ -36,12 +35,15 @@ const Cart = () => {
                                     <img src={items.image} alt="/" className="w-[75px] h-[75px] xs:w-[100px] xs:h-[100px] border rounded-[8px]" />
                                     <div className="text-current">
                                         <p className="text-xs sm:text-sm">{items.name}</p>
-                                        <NumberPicker 
+                                        <input 
+                                            type="number"
                                             min={1}
+                                            defaultValue={1}
                                             value={items.quantity}
-                                            onChange={(newQuantity)=> updateCartItemQuantity(items.id, newQuantity)}
-                                            className='mt-1 w-[90px] text-[10px] sm:text-xs mb-1'
+                                            onChange={(e)=> updateCartItemQuantity(items.id, parseInt(e.target.value))}
+                                            className="my-1 p-2 rounded-[4px] w-[80px] h-[30px] outline-none border border-[#c9cac9] text-xs sm:text-sm"
                                         />
+                                
                                         <p className="text-[10px] sm:text-xs text-[#92a1a7]">{items.size.label}</p>
                                         <p className="text-xs sm:text-sm">{items.amount}</p>
                                     </div>

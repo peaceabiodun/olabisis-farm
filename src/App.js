@@ -11,6 +11,7 @@ import Cart from "pages/cart-page/cart";
 import ContactPage from "pages/contact-page";
 import ShopCategories from "pages/shop/categories";
 import CheckoutPage from "pages/checkout-page";
+import Farms from "pages/farms";
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/single-product/:id" element={<SingleProductPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/farms" element={<Farms />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Router>

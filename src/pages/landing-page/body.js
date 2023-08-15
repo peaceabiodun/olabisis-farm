@@ -6,6 +6,7 @@ import Image3 from "assets/images/img3.jpg";
 import Image4 from "assets/images/img4.jpg";
 import Image6 from "assets/images/img6.jpg";
 import Image7 from "assets/images/img7.jpg";
+import Image8 from "assets/images/img16.jpg";
 import Farm from "assets/images/farm2.jpg";
 import { BsFillArrowRightCircleFill} from "react-icons/bs";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
@@ -17,10 +18,11 @@ const Body = () => {
     return (
        <div className=''>    
             <div className='relative flex items-center '>
-                <img src={Image1} alt="farm pictures" className='h-[100vh] w-full' />
+                <img src={Image1} alt="farm pictures" className='hidden md:flex max-h-[100vh] w-full' />
+                <img src={Image8} alt="farm pictures" className=' md:hidden object-cover w-full h-[100vh]' />
                 <div className='absolute flex flex-col items-start  max-w-[450px] px-4 md:pl-[100px]'>
                     <p className='text-[#c4ffda] italic'>Choose the best healthier way of life</p>
-                    <h2 className='text-2xl md:text-4xl text-[#ffffff] font-bold'>Welcome to the world of Nature and Clean Breeds</h2>
+                    <h2 className='text-xl xs:text-2xl md:text-4xl text-[#ffffff] font-bold'>Welcome to the world of Nature and Clean Breeds</h2>
                     <button className='text-[#274C5B] bg-[#EFD372] text-xs p-3 rounded-md my-2 flex items-center'>
                         Explore Now
                         <BsFillArrowRightCircleFill className='ml-2' />

@@ -1,8 +1,6 @@
-import "react-widgets/styles.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
-import NumberPicker from "react-widgets/NumberPicker";
 import Select from 'react-select';
 import {productCard, productSizeOptions } from 'utils/data';
 import { useContext, useState } from 'react';
@@ -14,7 +12,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 
 const ProductInfo = ({productDetails}) => {
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState("");
     const [selectedSize, setSelectedSize] = useState(null);
     const {addToCart} = useContext(CartContext);
     const navigate = useNavigate();
@@ -34,6 +32,9 @@ const ProductInfo = ({productDetails}) => {
        
     };
 
+    const handleQuantity =(e)=>{
+        setQuantity(e.target.value)
+    }
     return ( 
         <div>
         <div className='mx-5 md:mx-11 my-5'>
@@ -63,12 +64,13 @@ const ProductInfo = ({productDetails}) => {
                     <div className='flex  gap-3'>
                         <div className='text-current text-sm'>
                             <p>Quantity:</p>
-                            <NumberPicker 
-                                defaultValue={1}
+                            <input 
+                                type="number"
                                 min={1}
+                                defaultValue={1}
                                 value={quantity}
-                                onChange={setQuantity}
-                                className='mt-1 w-[90px]'
+                                onChange={handleQuantity}
+                                className="mt-1 p-2 rounded-[4px] w-[80px] h-[38px] outline-none border border-[#c9cac9]"
                              />
                         </div>
                         <div  className='text-current text-sm'>
@@ -77,7 +79,7 @@ const ProductInfo = ({productDetails}) => {
                                 options={productSizeOptions} 
                                 defaultValue={selectedSize} 
                                 onChange={setSelectedSize}   
-                                className='mt-1 text-[12px] h-[38px]' 
+                                className='mt-1 text-[12px] ' 
                             />
                         </div>
                     </div>
