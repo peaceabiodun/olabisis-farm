@@ -75,6 +75,7 @@ export const categories = [
     {id: 7, image: sackOutline, name: "Fish Feed" },
 ];
 
+
 export const hotDeals = [
     {
         id:1, 

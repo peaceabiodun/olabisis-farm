@@ -19,7 +19,7 @@ const CheckoutBody = () => {
     return ( 
         <div className="p-5 md:p-10">
             <div className="flex flex-col">
-                <h1 className="text-xl text-current font-bold">Checkout</h1>
+                <h1 className=" tex-lg sm:text-xl text-current font-bold">Checkout</h1>
 
                 <div className="flex justify-center mt-3">
                     {tabs.map((item) =>(
@@ -42,7 +42,7 @@ const CheckoutBody = () => {
 
                 <div>  
                     {CheckoutTabs === tabs[0].tab &&      
-                        <DeliveryDetailsForm onNext={() => handleTabChange(tabs[1].id)} />
+                        <DeliveryDetailsForm onNext={() => handleTabChange(tabs[1].tab)} />
                     }
 
                     {CheckoutTabs === tabs[1].tab &&      

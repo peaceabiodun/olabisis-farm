@@ -19,7 +19,7 @@ const Cart = () => {
             <NavbarHeader />
                 <div className="p-5 md:p-10">
                     <div>
-                        <h1 className="text-xl text-current font-bold">Shopping Cart</h1>
+                        <h1 className="text-lg sm:text-xl text-current font-bold">Shopping Cart</h1>
                         <p className="text-[#525C60] text-xs">There are {totalItemsInCart} items in your shopping cart</p>
                     </div>
 
@@ -33,17 +33,17 @@ const Cart = () => {
                             {cartItems.map((items, index) => (
                             <div key={index} className="flex justify-between border-b p-3">
                                 <div className="flex gap-3">
-                                    <img src={items.image} alt="/" className="w-[100px] h-[100px] border rounded-[8px]" />
+                                    <img src={items.image} alt="/" className="w-[75px] h-[75px] xs:w-[100px] xs:h-[100px] border rounded-[8px]" />
                                     <div className="text-current">
-                                        <p className="text-sm">{items.name}</p>
+                                        <p className="text-xs sm:text-sm">{items.name}</p>
                                         <NumberPicker 
                                             min={1}
                                             value={items.quantity}
                                             onChange={(newQuantity)=> updateCartItemQuantity(items.id, newQuantity)}
-                                            className='mt-1 w-[90px] text-xs mb-1'
+                                            className='mt-1 w-[90px] text-[10px] sm:text-xs mb-1'
                                         />
-                                        <p className="text-xs text-[#92a1a7]">{items.size.label}</p>
-                                        <p className="text-sm">{items.amount}</p>
+                                        <p className="text-[10px] sm:text-xs text-[#92a1a7]">{items.size.label}</p>
+                                        <p className="text-xs sm:text-sm">{items.amount}</p>
                                     </div>
                                 </div>
 
@@ -59,28 +59,28 @@ const Cart = () => {
 
                         </div>
 
-                        <div className="border my-5 rounded-md p-3 sm:w-[40%] h-[250px] text-sm">
+                        <div className="border my-5 rounded-md p-3 sm:w-[40%] h-[250px] text-xs sm:text-sm">
                             <div className="flex justify-between py-2 border-b">
                                 <p className="text-current ">Subtotal:</p>
                                 <p className="text-[#8d9ba0]">$00.00</p>
                             </div>
 
                             <div className="flex justify-between py-2 border-b">
-                                <p className="text-current text-sm">Discount:</p>
+                                <p className="text-current ">Discount:</p>
                                 <p className="text-[#8d9ba0]">$00.00</p>
                             </div>
 
                             <div className="flex justify-between py-2 border-b">
-                                <p className="text-current text-sm">Shipping fee:</p>
+                                <p className="text-current ">Shipping fee:</p>
                                 <p className="text-[#8d9ba0]">$00.00</p>
                             </div>
 
                             <div className="flex justify-between py-2 ">
-                                <p className="text-current text-sm">Total:</p>
+                                <p className="text-current ">Total:</p>
                                 <p className="text-[#8d9ba0]">$00.00</p>
                             </div>
                                 
-                            <button onClick={()=>(navigate("/checkout"))} className="bg-current flex text-white text-sm w-full py-1 px-2 rounded-md mt-2 justify-center">
+                            <button onClick={()=>(navigate("/checkout"))} className="bg-current flex text-white text-xs sm:text-sm w-full py-1 px-2 rounded-md mt-2 justify-center">
                                 Checkout
                                 <BsCart3 className="ml-1" />
                             </button>
