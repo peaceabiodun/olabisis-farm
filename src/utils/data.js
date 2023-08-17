@@ -75,7 +75,28 @@ export const categories = [
     {id: 7, image: sackOutline, name: "Fish Feed" },
 ];
 
-
+export const farmDetails = [
+    {
+        id:1, 
+        title:'Best prices & offers', 
+        description:'We provide you with the best prices for all farm produce. You get to buy fresh and affordable products'
+    },
+    {
+        id:2, 
+        title:'100% Natural Product Sales', 
+        description:'We grow and sell diffrent kinds of fresh vegetables, crops, fish feeds and delivery to all states in Nigeria.'
+    },
+    {
+        id:3, 
+        title:'seafood / livestock / Poultry', 
+        description:'We breed and sell and deliver diffrent species and sizes of Cat fish, livestock and Poultry birds such as Goats, Cattles, sheeps buffalos, chickens and turkeys .'
+    },
+    {
+        id:4, 
+        title:'Constructions', 
+        description:'We help individuals, small businesses and big companies construct well structured fish ponds, livestock cages an structures.'
+    }
+]
 export const hotDeals = [
     {
         id:1, 

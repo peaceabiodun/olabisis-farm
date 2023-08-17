@@ -4,62 +4,55 @@ import NewsLetterImg from "assets/images/newsLetterImg.jpg";
 import Image1 from "assets/images/img1.jpg";
 import Image3 from "assets/images/img3.jpg";
 import Image4 from "assets/images/img4.jpg";
-import Image6 from "assets/images/img6.jpg";
 import Image7 from "assets/images/img7.jpg";
 import Image8 from "assets/images/img16.jpg";
 import Farm from "assets/images/farm2.jpg";
 import { BsFillArrowRightCircleFill} from "react-icons/bs";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
 import { BsHeart} from "react-icons/bs";
-import { productCard, stats, testimonialDetails } from "utils/data";
+import { farmDetails, productCard, stats, testimonialDetails } from "utils/data";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Body = () => {
+    let navigate = useNavigate();
     return (
        <div className=''>    
             <div className='relative flex items-center '>
                 <img src={Image1} alt="farm pictures" className='hidden md:flex max-h-[100vh] w-full' />
-                <img src={Image8} alt="farm pictures" className=' md:hidden object-cover w-full h-[100vh]' />
+                <img src={Image8} alt="farm pictures" className=' md:hidden object-cover w-full h-[90vh]' />
                 <div className='absolute flex flex-col items-start  max-w-[450px] px-4 md:pl-[100px]'>
                     <p className='text-[#c4ffda] italic'>Choose the best healthier way of life</p>
                     <h2 className='text-xl xs:text-2xl md:text-4xl text-[#ffffff] font-bold'>Welcome to the world of Nature and Clean Breeds</h2>
-                    <button className='text-[#274C5B] bg-[#EFD372] text-xs p-3 rounded-md my-2 flex items-center'>
+                    <button onClick={()=>navigate('/shop')} className='text-[#274C5B] bg-[#EFD372] text-xs p-3 rounded-md my-2 flex items-center'>
                         Explore Now
                         <BsFillArrowRightCircleFill className='ml-2' />
                     </button>
                 </div>
             </div> 
 
-            <div className='bg-[#Ffffff] flex flex-row justify-center p-5 mdLg:p-10 gap-4 w-full'>
-                <div className='w-full hidden md:flex justify-end'>
-                    <img src={Image6} alt="fruits" className='h-[80%] mdLg:h-full' />
+            <div className='bg-[#Ffffff] flex flex-col items-center p-5 mdLg:p-10 w-full space-y-4'>
+                <p className='text-[#7EB693] font-Yellowtail text-lg '>What We Provide</p>
+                <div className="grid xs:grid-cols-2 gap-5">
+                {farmDetails.map((item)=>(
+                <div key={item.id} className="border p-4 rounded-md flex flex-col justify-center max-w-[300px] h-[170px] items-center cursor-pointer transition-transform transform hover:scale-105 hover:translate-x-1 hover:translate-y-1">
+                    <h2 className="text-sm font-bold text-current">{item.title}</h2>
+                    <p className="text-[#b4b4b6] text-xs">{item.description}</p>
                 </div>
-                <div className='text-current flex flex-col items-center md:items-start justify-center '>
-                    <p className='text-[#7EB693] font-Yellowtail text-lg mb-2'>About us</p>
-                    <p className='text-sm font-bold'>Olabisis's Farms engages in commercial production and sales of vegetables, Crop produce, livestocks, poultry and Fish Feeds. We also provide pasture grounds for livestock grazing.  
-                    </p>
-
-                    <p className='bg-[#ECECEC] p-2 text-xs my-3 rounded-xl w-[40%] text-center'>100% Natural Product Sales</p>
-                    <p className='text-xs pl-4 font-[300] w-[70%]'>We grow and sell diffrent kinds of fresh vegetables, crops, fish feeds and delivery to all states in Nigeria.</p>
-
-                    <p className='bg-[#ECECEC] p-2 text-xs my-3 rounded-xl w-[40%] text-center'>Cat fish / livestock / Poultry</p>
-                    <p className='text-xs pl-4 font-[300] w-[70%]'>We breed and sell and deliver diffrent species and sizes of Cat fish, livestock and Poultry birds such as Goats, Cattles, sheeps buffalos, chickens and turkeys . </p>
-
-                    <p className='bg-[#ECECEC] p-2 text-xs my-3 rounded-xl w-[40%] text-center'>Constructions</p>
-                    <p className='text-xs pl-4 font-[300] w-[70%]'>We help individuals, small businesses and big companies construct well structured fish ponds, livestock cages an structures. </p>
-
-                    <button className='bg-current rounded-xl my-3 text-xs w-[40%] p-2 text-white'>
-                        Shop Now
-                    </button>
+                ))}
                 </div>
+                <button onClick={()=>navigate('/shop')} className='bg-current rounded-xl text-xs w-[200px] p-2 text-white'>
+                    Shop Now
+                </button>
+                
             </div>
 
             <div className="relative flex flex-col items-end justify-center">
-                <img src={Farm} alt="farm pictures" className="h-[70vh] md:h-[100vh] w-full " />
+                <img src={Farm} alt="farm pictures" className="h-[60vh] md:h-[100vh] w-full " />
 
                 <div className='absolute flex flex-col max-w-[800px] px-4 md:pr-[100px]'>
                     <h2 className='text-current mdLg:text-[#ffd642] text-xl font-semibold'>Feeding Africa</h2>
-                    <p className="text-[#f8efef] py-2 text-sm ">We grow commercial organic fresh vegetables for supply across the country. Some of our regular produce include, but not limited to, bell peppers, tomatoes, watermelons, cabbages, broccoli, cucumbers all in different varieties. Olabisi's farm also supports the livestock industry. We understand that the performance of livestock depends on the quality of forage and pasture it is fed. Therefore we produce and supply highly nutritional pasture crops to livestock farmers.</p>
+                    <p className="text-[#f8efef] py-2 text-xs xs:text-sm ">We grow commercial organic fresh vegetables for supply across the country. Some of our regular produce include, but not limited to, bell peppers, tomatoes, watermelons, cabbages, broccoli, cucumbers all in different varieties. Olabisi's farm also supports the livestock industry. We understand that the performance of livestock depends on the quality of forage and pasture it is fed. Therefore we produce and supply highly nutritional pasture crops to livestock farmers.</p>
                 </div>
             </div>
 
@@ -70,7 +63,7 @@ const Body = () => {
                
                 <div className=' grid grid-cols-2 md:grid-cols-3 mdLg:grid-cols-4 gap-3 my-5'>
                 {productCard.map((item) =>(
-                    <div key={item.id} className='bg-[#F9F8F8] rounded-[12px] p-2 sm:p-3'>
+                    <Link key={item.id}  to={`/single-product/${item.id}`} className='bg-[#F9F8F8] rounded-[12px] p-2 sm:p-3'>
                         <div className="flex justify-between">
                             <button className='bg-current py-1 px-2 text-[8px] xs:text-[9px] text-white rounded-md'> {item.category}
                             </button>
@@ -87,7 +80,7 @@ const Body = () => {
                                 <StarIcon className='w-[40px] xs:w-[55px]' />
                             </div>
                         </div>
-                    </div>
+                    </Link>
                      ))}
                 </div>
                

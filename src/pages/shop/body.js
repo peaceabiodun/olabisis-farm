@@ -62,7 +62,10 @@ const Body = () => (
         </div>
 
         <div className="p-5 md:p-10 flex flex-col items-center ">
-            <h2 className="text-current font-semibold text-lg sm:text-xl">Hot Deals</h2>
+            <div className="flex items-center text-current">
+                <h2 className=" font-semibold text-lg sm:text-xl">Hot Deals</h2>
+                <BsArrowRight className="ml-2 md:hidden "/>
+            </div>
             <div id="scroll" className="flex gap-4 mt-5 w-full overflow-auto scroll-smooth lg:justify-center">
                 {hotDeals.map((item)=>(
                 <div key={item.id} className="relative flex items-center cursor-pointer">

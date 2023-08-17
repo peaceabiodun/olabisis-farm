@@ -54,7 +54,10 @@ const NavbarHeader = () => {
             </div>
 
             <div className="text-white gap-4 flex">
-                <BsCart3 size={22} />
+                <Link to="/cart">
+                    <BsCart3 size={22} />
+                    <span className="bg-white text-current absolute w-4 h-4 rounded-full top-2 ml-3 flex text-center justify-center text-[10px]">{totalItemsInCart}</span>
+                </Link>
                 <HiMenuAlt3 size={22} onClick={openMobileMenu} />
             </div>
 

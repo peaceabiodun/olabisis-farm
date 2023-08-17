@@ -97,10 +97,10 @@ const ProductInfo = ({productDetails}) => {
             <div className='py-5 sm:py-10 flex flex-col items-center space-y-3 '>
                 <h2 className='text-current text-sm'>Product Description</h2>
 
-                <Carousel showArrows={false} showThumbs={false} className=" sm:w-[400px] rounded-[10px]" >
+                <Carousel showArrows={false} showThumbs={false} className=" max-w-[300px] h-[300px] rounded-[10px]" >
                     {productDetails.descriptive_images.map((item) =>(
                     <div key={item.id} >
-                        <img src={item.image} alt='descriptive' className='rounded-[10px] w-[300px] h-[280px]'/>
+                        <img src={item.image} alt='descriptive' className='rounded-[10px] w-[300px] h-[220px] ' />
                     </div>
                     ))}
                 </Carousel>

@@ -5,6 +5,7 @@ import { hotDeals, productCard } from "utils/data";
 import { ReactComponent as StarIcon} from 'assets/icons/Star.svg';
 import { Link } from "react-router-dom";
 import CategoryMobileNav from "components/category-mobile-nav/category-mobile-nav";
+import { BiArrowBack } from "react-icons/bi";
 
 
 
@@ -19,6 +20,9 @@ const CategoriesBody = ({productsInCategory}) => {
                     <p>{productsInCategory.category}</p>
                 </div>
             </div>
+            <Link to='/shop'>
+                <BiArrowBack size={24} className='text-current ml-2 mt-2' />
+            </Link>
             <div className="flex justify-center md:justify-normal py-5 md:py-10 pl-2">
                 <Sidebar />
                 <div className=" grid grid-cols-1 xs:grid-cols-2 mdLg:grid-cols-3 xl:grid-cols-4 px-5 gap-3">
