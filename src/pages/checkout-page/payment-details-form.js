@@ -36,6 +36,16 @@ const PaymentDetailsForm = () => {
     const [active, setActive] = useState(null);  
     const [index, setIndex] = useState(null);
     const [cvvValue, setCvvValue] = useState('');
+    const [expiryDate, setExpiryDate] = useState('');
+
+    const handleChangeDate =(e)=>{
+        const selectedDate = e.target.value;
+        const dateParts = selectedDate.split('-');
+        const year = dateParts[0].slice(2);
+        const month = dateParts[1]; 
+        const formattedDate = `${month}/${year}`;
+        setExpiryDate(formattedDate);
+    }
 
     const handleCvvChange =(e)=>{
         const newCvvValue = e.target.value;
@@ -83,9 +93,9 @@ const PaymentDetailsForm = () => {
                                     className="w-full h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"             
                                 />
 
-                                <div className="flex gap-3">
+                                <div className="flex gap-3 w-full">
                                     <input 
-                                        type="date"
+                                        type="month"
                                         name="expiry-date"
                                         placeholder="Expiry Date"
                                         className="w-full h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"
@@ -97,7 +107,7 @@ const PaymentDetailsForm = () => {
                                         value={cvvValue}
                                         onChange={handleCvvChange}
                                         maxLength={3}
-                                        className=" w-full h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"
+                                        className="w-full h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"
                                     />
                                 </div>
 

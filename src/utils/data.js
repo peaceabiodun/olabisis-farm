@@ -55,7 +55,18 @@ import Img10 from "assets/images/img10.jpg";
 import Img11 from "assets/images/img11.jpg";
 import Img12 from "assets/images/img12.jpg";
 import Img13 from "assets/images/img13.jpg";
-
+import SmokedFish from "assets/images/smokedFish.jpg";
+import SmokedFish1 from "assets/images/smokedFish1.jpg";
+import SmokedFish2 from "assets/images/smokedFish2.jpg";
+import Orange from "assets/images/orange.jpg";
+import Orange1 from "assets/images/orange1.jpg";
+import Orange2 from "assets/images/orange2.jpg";
+import Milk from "assets/images/milk.jpg";
+import Milk1 from "assets/images/milk1.jpg";
+import Cheese from "assets/images/cheese.jpg";
+import Cheese1 from "assets/images/cheese1.jpg";
+import ChickenFeed from "assets/images/chickenFeed.jpg";
+import ChickenFeed1 from "assets/images/chickenFeed1.jpg";
 
 export const navLinks = [
     {id:1, title: "Home", link: "/"},
@@ -72,7 +83,7 @@ export const categories = [
     {id: 4, image: VegeOutline, name: "Vegetables" },
     {id: 5, image: HenOutline, name: "Poultry" },
     {id: 6, image: EggOutline, name: "Dairy" },
-    {id: 7, image: sackOutline, name: "Fish Feed" },
+    {id: 7, image: sackOutline, name: "Feed" },
 ];
 
 export const farmDetails = [
@@ -224,7 +235,7 @@ export const productCard =[
     }, 
     {
         id:"8" , 
-        category: 'Dairy', 
+        category: 'Poultry', 
         image: Eggs , 
         name: "Eggs", 
         amount: "2,000/crt", 
@@ -256,7 +267,8 @@ export const productCard =[
         descriptive_images: [
             {id: "01", image: Banana1}, 
             {id: "02", image: Banana2}, 
-        ],},
+        ],
+    },
     {
         id:"11" ,
         category: 'Vegetables', 
@@ -275,22 +287,86 @@ export const productCard =[
         image: Corn , 
         name: "Fresh Corn", 
         amount: "200/1", 
-        description: 'Broilers vary in size and weight, please pick the size and quantity that you want.',
+        description: 'Corn vary in size and weight, please pick the size and quantity that you want.',
         descriptive_images: [
             {id: "01", image: Corn1}, 
             {id: "02", image: Corn2}, 
+            {id: "03", image: Corn}, 
         ],
     }, 
     {
         id:"13" , 
-        category: 'Fish Feed', 
+        category: 'Feed', 
         image: FishFeed , 
-        name: "Feed", 
+        name: "Fish Feed", 
         amount: "16,000/bg", 
-        description: 'Broilers vary in size and weight, please pick the size and quantity that you want.',
+        description: 'Fish Feed vary in size and weight, please pick the size and quantity that you want.',
         descriptive_images: [
             {id: "01", image: FishFeed1}, 
-            {id: "02", image: FishFeed2}, 
+            {id: "02", image: FishFeed2},
+            {id: "03", image: FishFeed}, 
+        ],
+    }, 
+    {
+        id:"14" , 
+        category: 'Sea Food', 
+        image: SmokedFish, 
+        name: "Smoked Fish", 
+        amount: "2,000/pack", 
+        description: 'Smoked fish vary in sizes, please pick the size and quantity of packs that you want. we have 6 in one pack', 
+        descriptive_images: [
+            {id: "01", image: SmokedFish1}, 
+            {id: "02", image: SmokedFish}, 
+            {id: "03", image: SmokedFish2},
+        ]
+    },
+    {
+        id:"15" , 
+        category: 'Fruits', 
+        image: Orange , 
+        name: "Orange", 
+        amount: "100/1",
+        description: 'Oranges vary in size and weight, please pick the size and quantity that you want.',
+        descriptive_images: [
+            {id: "01", image: Orange1}, 
+            {id: "02", image: Orange2}, 
+            {id: "02", image: Orange}
+        ],
+    },
+    {
+        id:"16" , 
+        category: 'Dairy', 
+        image: Milk , 
+        name: "Milk", 
+        amount: "3000/pack",
+        description: 'Our Milk vary in size and weight, please pick the size and quantity that you want.',
+        descriptive_images: [
+            {id: "01", image: Milk1}, 
+            {id: "02", image: Milk}, 
+        ],
+    },
+    {
+        id:"17" , 
+        category: 'Dairy', 
+        image: Cheese , 
+        name: "Local Cheese", 
+        amount: "500/pack",
+        description: 'Our Cheese vary in size and weight, please pick the size and quantity that you want. we have 5 pieces in a pack',
+        descriptive_images: [
+            {id: "01", image: Cheese1}, 
+            {id: "02", image: Cheese}, 
+        ],
+    },
+    {
+        id:"18" , 
+        category: 'Feed', 
+        image: ChickenFeed , 
+        name: "Chiken Feed", 
+        amount: "5,000/bg", 
+        description: 'Chicken Feed vary in size and weight, please pick the size and quantity that you want.',
+        descriptive_images: [
+            {id: "01", image: ChickenFeed1}, 
+            {id: "02", image: ChickenFeed}, 
         ],
     }, 
 ];
