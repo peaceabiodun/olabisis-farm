@@ -38,15 +38,14 @@ const PaymentDetailsForm = () => {
     const [cvvValue, setCvvValue] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
 
-    const handleChangeDate =(e)=>{
-        const selectedDate = e.target.value;
-        const dateParts = selectedDate.split('-');
-        const year = dateParts[0].slice(2);
-        const month = dateParts[1]; 
+    const handleExpiryDate =(e)=>{
+        const input = e.target.value;
+        const cleanInput = input.replace(/\D/g, '');
+        const month = cleanInput.slice(0, 2);
+        const year = cleanInput.slice(2, 4);
         const formattedDate = `${month}/${year}`;
         setExpiryDate(formattedDate);
     }
-
     const handleCvvChange =(e)=>{
         const newCvvValue = e.target.value;
         if(newCvvValue.length <=3){
@@ -90,15 +89,19 @@ const PaymentDetailsForm = () => {
                                     type="text"
                                     name="card-number"
                                     placeholder="Card Number"
-                                    className="w-full h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"             
+                                    className="w-full h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"  
+                                    maxLength={15}           
                                 />
 
                                 <div className="flex gap-3 w-full">
                                     <input 
-                                        type="month"
+                                        type="text"
                                         name="expiry-date"
-                                        placeholder="Expiry Date"
-                                        className="w-full h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"
+                                        placeholder="Expiry Date (mm/yy) "
+                                        value={expiryDate}
+                                        onChange={handleExpiryDate}
+                                        className="w-[100%] h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"
+                                        maxLength={5}
                                     />
                                     <input 
                                         type="text"
@@ -107,7 +110,7 @@ const PaymentDetailsForm = () => {
                                         value={cvvValue}
                                         onChange={handleCvvChange}
                                         maxLength={3}
-                                        className="w-full h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"
+                                        className="w-[100%] h-[35px] border outline-none text-[#b1b1af] p-2 rounded-sm shadow-md"
                                     />
                                 </div>
 
